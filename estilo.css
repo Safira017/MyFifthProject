@@ -1,0 +1,414 @@
+/*para criar o efeito de parallax que tem no spotify, é necessário que o body e o htmk
+sejam 100% de altura. O #home também é 100%  vou centralizar o Musica para todos, e ele precisa ser o centro de 100% da seção.*/
+/* overflow-x esconde a barra horizontal*/
+html, body, #home {
+	height: 100%;
+	overflow-x: hidden;
+}
+
+body {
+	background: url(imagens/capa.png),
+	url(imagens/ruido.png),
+	linear-gradient(50deg, #ff4169, #7c26f8);
+	background-attachment: fixed;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+/* há 3 imagens, a capa que opacidade, o ruido que da um efeito diferente, e o degrade
+Para ter esse feito é necessário a opacidade. O 50 deg, significa 50 graus.
+Usei o background attachmente para fixar a imagem de fundo, enquanto rolamos a pagina*/
+
+/*---------------BARRA DE NAVEGAÇÃO----------------*/
+
+nav.nav-transparente {
+	background: rgba(0,0,0,0.6);
+	padding: 15px 0;
+}
+
+/* para alterar a cor dos links eu tive que apertar f12 e na aba superior clicar no primeiro icone da esquerda, porque tem a questao da especificidade.*/
+.navbar-light .navbar-nav .nav-link {
+	color: white;
+	font-weight: bold;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+	color: green;
+}
+
+.navbar-light .navbar-toggler {
+    color: rgba(255,255,255,.5);
+    border-color: rgba(255,255,255,0.5);
+}
+
+.divisor {
+	width: 1px;
+	background: white;
+	margin: 12px 15px;
+}
+
+/*Para centralizar na horizontal cria uma classe qualquer e usa o text-align*/
+.capa {
+	text-align: center;
+}
+
+.btn-custom {
+	color: white;
+	border-radius: 500px;
+	-webkit-border-radius: 500px;
+	-moz-border-radius: 500px;
+	text-transform: uppercase;
+	transition: background 0.4s, color 0.4s;
+	padding: 10px 20px;
+}
+
+.btn-roxo {
+	background: #7c25f8
+}
+
+.btn-roxo:hover {
+	background: #6207e3;
+	color: white;
+}
+
+.btn-branco {
+	border: 2px solid white;
+}
+
+.btn-branco:hover {
+	background-color: white;
+	color: black;
+}
+
+/*usado para definir uma largura menor para afastar os icones do texto*/
+.carousel-control-next, .carousel-control-prev{
+	width: 5%;
+}
+
+/*ESTRUTURA CONTEÚDOS*/
+.caixa {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#servicos {
+	background: white;
+}
+
+#recursos {
+	color: white;
+}
+
+#servicos h2, h3 {
+	color: #7c25f8;
+}
+
+
+#recursos h2 {
+	color: white;
+}
+
+#recursos h3 {
+	color: #9bf0e1;
+}
+
+.albuns {
+	padding: 10px 0;
+}
+
+/*rotate rotaciona a imagem*/
+.rotacionar {
+	-ms-transform: rotate(30deg); /*IE 9*/
+	-webkit-transform: rotate(30deg); /*Chrome, Safari, Opera */
+	transform: rotate(30deg);
+	padding-left: 80px;
+}
+
+/*RODAPE*/
+footer {
+	background: #000;
+	padding: 50px 0px 20px 0;
+	position: relative;
+}
+
+footer h4 {
+	color: #919496;
+	font-size: 0.8em;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+footer .navbar-nav a {
+	color: white;
+	font-size: 0.8em;
+}
+
+footer .navbar-nav a:hover {
+	color: #9bf0e1;
+	text-decoration: none;
+}
+
+footer ul {
+	list-style: none;
+}
+
+footer ul li {
+	float: right;
+	margin: 0 5px;
+	font-weight: bold;
+}
+
+#footer2 {
+	margin-top: 50px;
+}
+
+#footer2 a {
+	color: gray;
+	font-weight: bold;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+#footer2 a:hover {
+	color: green;
+}
+
+#footer2 p{
+	color: gray;
+	font-size: 10px;
+	text-align: right;
+}
+
+
+/*TIPOGRAFIA*/
+  h1 {
+	font-weight: 900;
+	letter-spacing: -0.05em;
+	margin-bottom: 50px;
+	color: white;
+}
+
+ h2 {
+	font-size: 3em;
+	font-weight: 700;
+	letter-spacing: -0.04em;
+}
+
+ h3 {
+	font-size: 2em;
+	font-weight: 700;
+	letter-spacing: -0.04em;
+}
+
+/*Media queries para diminuir o musica para todos de acordo com os dispositivos
+TA EM EM MAS PODERIA SER EM PX*/
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+ .btn-custom {
+    	margin: 10px 15px;
+    	font-size: 1em;
+    }
+
+    footer h4 {
+	padding-top: 10px;
+}
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+ h1{
+ 	font-size: 3em;
+ }
+ .btn-custom {
+    	margin: 10px 15px;
+    }
+
+footer h4 {
+	padding-top: 10px;
+}
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+ h1{
+ 	font-size: 4em;
+ }
+
+  footer#rodapeajuda .linksuteis {
+ 	margin-left: 5px;
+ 	padding-top: 20px;
+ }
+
+#footer2 .textoeimagem{
+	float: left;
+}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+ h1{
+ 	font-size: 5em;
+ }
+ footer#rodapeajuda .linksuteis {
+ 	margin-left: 5px;
+ 	padding-top: 20px;
+ }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+ h1 {
+ 	font-size: 6em;
+ }
+}
+
+
+
+
+/*------------------------------------------------------PAGINA AJUDA---------------------------------------------------------------------------*/
+
+#ajuda {
+	padding-top: 200px;
+	background-image: linear-gradient(to right,#0033cc, #000099);
+}
+
+#ajuda h1 {
+	font-weight: bold;
+	text-align: center;
+}
+
+#ajuda h4 {
+	text-transform: uppercase;
+	color: lightgray;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+#ajuda a {
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+}
+
+
+#ajuda .input-group {
+	width: 70%;
+	padding-bottom: 50px;
+
+}
+
+
+#ouca {
+	background: #f2f2f2;
+	padding: 70px 0;
+}
+
+#ouca h4 {
+	color: black;
+	font-weight: bold;
+	text-align: center
+}
+
+#ouca .navbar-nav a {
+   font-weight: bold;
+   text-decoration: none;
+}
+
+#visita {
+	background: white;
+	padding-bottom: 50px;
+}
+
+#visita h2 {
+	font-weight: bold;
+	color: black;
+	text-align: center;
+	padding-top: 100px;
+	padding-bottom: 50px;
+}
+
+#visita p {
+	font-weight: bold;
+	color: black;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+#visita a {
+	border-radius: 50px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	background-color: #3333cc;
+	padding: 15px;
+	font-weight: bold;
+}
+
+
+#usar {
+	background-image: linear-gradient(to right,#ff5050, #ff9933);
+	padding-top: 50px;
+	padding-bottom: 50px;
+	color: white;
+}
+
+#usar h2 {
+	font-weight: bold;
+	padding-bottom: 70px;
+	text-align: center;
+}
+
+#usar h3 {
+	font-weight: bold;
+	color: white;
+}
+
+#usar p {
+	font-size: 20px;
+}
+
+#usar a {
+	font-weight: bold;
+	color: white;
+	letter-spacing: 0.2em;
+}
+
+#usar a:hover {
+	font-weight: bold;
+	color: black;
+}
+hr{
+  border-color: white;
+  box-sizing:border-box;
+  width:100%
+}
+
+#ainda {
+	background: #f2f2f2;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+#ainda h2 {
+	text-align: center;
+}
+
+#ainda p {
+	font-weight: bold;
+	text-align: center;
+}
+
+#ainda a {
+	border-radius: 50px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	background-color: #3333cc;
+	padding: 15px;
+	width: 40%;
+	font-weight: bold;
+}
+
+
+
+
